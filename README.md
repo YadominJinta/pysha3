@@ -1,6 +1,22 @@
 pysha3
 ======
 
+# Fix installation on python > 3.9
+
+# If you're looking for keccak_256 method for ethereum, I strongly suggest you use `eth_hash.auto.keccak`
+
+## Why you still need this backport for python < 3.6 on python > 3.9
+
+The keccak algorithm presented at the NIST Hash Workshop in 2006, and accepted as standard of `SHA-3` in 2015 with some tweaks. It caused current SHA3 methods in `hashlib` is not compatible with this old standard keccak method, and ethereum consist using the original keccak algorithm.
+
+## How to install
+
+``` bash
+pip3 install git+https://github.com/YadominJinta/pysha3.git
+```
+
+---
+
 SHA-3 wrapper (keccak) for Python. The package is a wrapper around the
 optimized Keccak Code Package,
 <https://github.com/gvanas/KeccakCodePackage> .
